@@ -9,7 +9,7 @@ class SignUpPage(BasePage):
     PHONE_NUMBER_INPUT = (By.XPATH, "//input[@id='_R_355bav4npfnb_-form-item']")
     PASSWORD_INPUT = (By.XPATH, "//input[@name='password']")
     CONFIRM_PASSWORD_INPUT = (By.XPATH, "//input[@name='confirmPassword']")
-    sign_up_button = (By.ID, "//button[normalize-space()='Next']")
+    sign_up_button = (By.XPATH, "//button[normalize-space()='Next']")
 
     def load(self,base_url: str):
         self.open(base_url)

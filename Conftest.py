@@ -3,6 +3,7 @@ from dotenv import load_dotenv
 import pytest
 from selenium import webdriver
 
+
 load_dotenv()  # Load environment variables from .env file
 
 @pytest.fixture
