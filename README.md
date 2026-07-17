@@ -1,4 +1,4 @@
-# QA Automation Project
+# TAP-SignUp-Automation
 
 This repository contains a Selenium + Pytest automation flow for a signup journey that verifies a one-time password (OTP) sent by email.
 
