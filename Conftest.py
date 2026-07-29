@@ -41,3 +41,16 @@ def otp():
     """
     from utils.email_helper import get_otp_from_email
     return get_otp_from_email
+
+@pytest.hookimpl(tryfirst=True, hookwrapper=True)
+def pytest_runtest_makereport(item, call):
+    # Execute all other hooks to obtain the report object
+    outcome = yield
+    rep = outcome.get_result()
+
+    # We only look at actual failing test calls, not setup/teardown
+    if rep.when == "call" and rep.failed:
+        driver = item.funcargs['driver']
+        test_name = item.name
+        from screenshot_utility import take_screenshot
+        take_screenshot(driver, test_name)
